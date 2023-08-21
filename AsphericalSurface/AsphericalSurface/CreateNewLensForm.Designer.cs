@@ -116,6 +116,7 @@
             this.conicConstTextBox.Name = "conicConstTextBox";
             this.conicConstTextBox.Size = new System.Drawing.Size(134, 23);
             this.conicConstTextBox.TabIndex = 6;
+            this.conicConstTextBox.Text = "0";
             // 
             // coef_A4_TextBox
             // 
@@ -123,6 +124,7 @@
             this.coef_A4_TextBox.Name = "coef_A4_TextBox";
             this.coef_A4_TextBox.Size = new System.Drawing.Size(134, 23);
             this.coef_A4_TextBox.TabIndex = 7;
+            this.coef_A4_TextBox.Text = "0";
             // 
             // coef_A6_TextBox
             // 
@@ -130,6 +132,7 @@
             this.coef_A6_TextBox.Name = "coef_A6_TextBox";
             this.coef_A6_TextBox.Size = new System.Drawing.Size(134, 23);
             this.coef_A6_TextBox.TabIndex = 8;
+            this.coef_A6_TextBox.Text = "0";
             // 
             // coef_A8_TextBox
             // 
@@ -137,6 +140,7 @@
             this.coef_A8_TextBox.Name = "coef_A8_TextBox";
             this.coef_A8_TextBox.Size = new System.Drawing.Size(134, 23);
             this.coef_A8_TextBox.TabIndex = 9;
+            this.coef_A8_TextBox.Text = "0";
             // 
             // lensWidthLabel
             // 
@@ -180,6 +184,7 @@
             this.coef_A10_TextBox.Name = "coef_A10_TextBox";
             this.coef_A10_TextBox.Size = new System.Drawing.Size(134, 23);
             this.coef_A10_TextBox.TabIndex = 14;
+            this.coef_A10_TextBox.Text = "0";
             // 
             // coef_A12_TextBox
             // 
@@ -187,6 +192,7 @@
             this.coef_A12_TextBox.Name = "coef_A12_TextBox";
             this.coef_A12_TextBox.Size = new System.Drawing.Size(134, 23);
             this.coef_A12_TextBox.TabIndex = 15;
+            this.coef_A12_TextBox.Text = "0";
             // 
             // coef_A4_Label
             // 

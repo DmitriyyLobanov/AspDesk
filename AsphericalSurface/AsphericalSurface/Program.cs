@@ -1,3 +1,6 @@
+using AsphericalSurface.Entities;
+using AsphericalSurface.Entities.Interfaces;
+
 namespace AsphericalSurface
 {
     internal static class Program
