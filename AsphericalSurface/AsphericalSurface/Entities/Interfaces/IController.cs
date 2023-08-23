@@ -8,6 +8,6 @@ namespace AsphericalSurface.Entities.Interfaces
 {
     internal interface IController
     {
-        public Boolean createNewExistLens(Lens newLens);
+        public Boolean createNewLens(Lens newLens);
     }
 }

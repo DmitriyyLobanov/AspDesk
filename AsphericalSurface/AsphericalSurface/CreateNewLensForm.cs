@@ -14,15 +14,12 @@ namespace AsphericalSurface
 {
     public partial class CreateNewLensForm : Form
     {
-        private ILensFileManager lensFileManager;
-        private IController controller;
+
 
 
         public CreateNewLensForm()
         {
             InitializeComponent();
-            lensFileManager = new LensFileManager();
-            controller = new Controller(lensFileManager);
         }
 
         private void createNewLensButton_MouseClick(object sender, MouseEventArgs e)
@@ -33,8 +30,27 @@ namespace AsphericalSurface
             }
             else
             {
-
-                MessageBox.Show("Ok!");
+                Lens newCustomLens = new Lens(lensNameTextBox.Text,
+                    Double.Parse(lensThinknessTextBox.Text),
+                    Double.Parse(LensWidthTextBox.Text),
+                    Double.Parse(lensRadiusTextBox.Text),
+                    Double.Parse(conicConstTextBox.Text),
+                    Double.Parse(coef_A4_TextBox.Text),
+                    Double.Parse(coef_A6_TextBox.Text),
+                    Double.Parse(coef_A8_TextBox.Text),
+                    Double.Parse(coef_A10_TextBox.Text),
+                    Double.Parse(coef_A12_TextBox.Text)
+                    );
+                IController controller = new Controller();
+                if (controller.createNewLens(newCustomLens))
+                {
+                    MessageBox.Show(newCustomLens.ToString() +"\n"+
+                        "Lens file has been created!");
+                }
+                else
+                {
+                    MessageBox.Show("Some error!");
+                }
             }
         }
 

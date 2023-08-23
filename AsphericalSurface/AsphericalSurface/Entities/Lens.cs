@@ -24,50 +24,33 @@ namespace AsphericalSurface.Entities
         {
         }
 
-        public Lens(string? lensName, double lensThinckness, double lensWidth, double radius)
+        public Lens(string? lensName, double lensThinckness, double lensWidth, double radius, double k, double coefA4, double coefA6, double coefA8, double coefA10, double coefA12)
         {
             this.LensName = lensName;
             this.LensThinckness = lensThinckness;
             this.LensWidth = lensWidth;
             this.Radius = radius;
-            this.Surface = SURFACE_TYPES.SPHERICAL;
-        }
-
-        public Lens(string? lensName, double lensThinckness, double lensWidth, double radius, double k, double coefA4, double coefA6, double coefA8, double coefA10, double coefA12) : this(lensName, lensThinckness, lensWidth, radius)
-        {
             this.K = k;
             this.CoefA4 = coefA4;
             this.CoefA6 = coefA6;
             this.CoefA8 = coefA8;
             this.CoefA10 = coefA10;
             this.CoefA12 = coefA12;
-            this.Surface = SURFACE_TYPES.ASPHERICAL;
+            if (this.K != 0 ||
+                this.CoefA4 != 0 ||
+                this.CoefA6 != 0 ||
+                this.CoefA8 != 0 ||
+                this.CoefA10 != 0 ||
+                this.CoefA12 != 0)
+            {
+                this.Surface = SURFACE_TYPES.ASPHERICAL;
+            }
+            else
+            {
+                this.Surface= SURFACE_TYPES.SPHERICAL;
+            }
         }
 
-        public Lens(string? lensName, double lensThinckness, double lensWidth, double radius, double k, double coefA4) : this(lensName, lensThinckness, lensWidth, radius)
-        {
-            K = k;
-            CoefA4 = coefA4;
-            this.Surface = SURFACE_TYPES.ASPHERICAL;
-        }
-
-        public Lens(string? lensName, double lensThinckness, double lensWidth, double radius, double k, double coefA4, double coefA6) : this(lensName, lensThinckness, lensWidth, radius, k, coefA4)
-        {
-            CoefA6 = coefA6;
-            this.Surface = SURFACE_TYPES.ASPHERICAL;
-        }
-
-        public Lens(string? lensName, double lensThinckness, double lensWidth, double radius, double k, double coefA4, double coefA6, double coefA8) : this(lensName, lensThinckness, lensWidth, radius, k, coefA4, coefA6)
-        {
-            CoefA8 = coefA8;
-            this.Surface = SURFACE_TYPES.ASPHERICAL;
-        }
-
-        public Lens(string? lensName, double lensThinckness, double lensWidth, double radius, double k, double coefA4, double coefA6, double coefA8, double coefA10) : this(lensName, lensThinckness, lensWidth, radius, k, coefA4, coefA6, coefA8)
-        {
-            CoefA10 = coefA10;
-            this.Surface = SURFACE_TYPES.ASPHERICAL;
-        }
 
         private double CalcCV(double radius)
         {

@@ -11,12 +11,12 @@ namespace AsphericalSurface.Entities
     {
         private ILensFileManager lensFileManager;
 
-        public Controller(ILensFileManager lensFileManager)
+        public Controller()
         {
-            this.lensFileManager = lensFileManager;
+            this.lensFileManager = new LensFileManager();
         }
 
-        public Boolean createNewExistLens(Lens newLens)
+        public Boolean createNewLens(Lens newLens)
         {
             if (lensFileManager.createNewLensFile(newLens))
             {
