@@ -12,6 +12,7 @@ namespace AsphericalSurface.Entities
     {
         public LensFileManager() { }
 
+        // TODO: Проработать исключения
         public bool createNewLensFile(Lens newLens)
         {
             string newFileName = newLens.LensName + ".txt";
@@ -34,5 +35,10 @@ namespace AsphericalSurface.Entities
             return true;
         }
 
+        // TODO: Реализовать удаление файла
+        public bool deleteLensFile(Lens lens)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace AsphericalSurface.Entities.Interfaces
 {
-    internal interface ILensFileManager
+    internal interface IDeserializer
     {
-        public bool createNewLensFile(Lens newLens);
-
-        public bool deleteLensFile(Lens lens);
+        public void DeserializeLens();
     }
 }

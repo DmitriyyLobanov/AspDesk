@@ -22,6 +22,8 @@ namespace AsphericalSurface
             InitializeComponent();
         }
 
+        // TODO: Тестировать с разными значениями, дополнить бОльшим количеством проверок (как пример подумать над значениями
+        // коэффициентов и конической константы). 
         private void createNewLensButton_MouseClick(object sender, MouseEventArgs e)
         {
             if (!requiredFieldsCheck() || !dataTypeCheck())
