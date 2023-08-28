@@ -8,6 +8,6 @@ namespace AsphericalSurface.Entities.Interfaces
 {
     internal interface IDeserializer
     {
-        public void DeserializeLens();
+        public void DeserializeLensFromTXT();
     }
 }

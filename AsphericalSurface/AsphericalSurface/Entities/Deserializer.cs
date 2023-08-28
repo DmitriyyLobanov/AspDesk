@@ -14,18 +14,72 @@ namespace AsphericalSurface.Entities
         }
 
         //TODO: Реализовать десеарелизацию из файла с параметрами в объект линзы (взять путь у Environment) 
-        public void DeserializeLens()
+        public void DeserializeLensFromTXT()
         {
-            //string[] fileNames = Directory.GetFiles();
-            //try
-            //{
+            string userDocsFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string appStorageFolder = Path.Combine(userDocsFolder, "AsphericalSurface");
+            string existLensFolder = Path.Combine(appStorageFolder, "ExistLenses");
 
-            //}
-            //catch (Exception)
-            //{
+            try
+            {
+                foreach (string file in Directory.GetFiles(existLensFolder))
+                {
+                    if (File.Exists(file)) 
+                    {
+                        //string temp;
+                        //temp = File.ReadAllText(file);
+                        
+                        //MessageBox.Show(file);
+                        ParseFromTxt(file);
+                    }
+                }
+            }
+            catch (Exception)
+            {
 
-            //    throw;
-            //}
+                throw;
+            }
         }
+
+        //TODO: Доделать метод парсинга данных из TXT файла
+        private void ParseFromTxt(string fullPath)
+        {
+            Lens parseResult = new Lens();
+            foreach (var line in File.ReadAllLines(fullPath))
+            {
+                string currentLine = line;
+                if (currentLine.Contains("Имя продукта: "))
+                {
+                    string temp = currentLine.Remove(0, 13);
+                    parseResult.LensName = temp;
+                }
+                if (currentLine.Equals("Тип поверхности: ASPHERICAL"))
+                {
+                    parseResult.Surface = SURFACE_TYPES.ASPHERICAL;
+                }
+                if (currentLine.Equals("Тип поверхности: SPHERICAL"))
+                {
+                    parseResult.Surface = SURFACE_TYPES.SPHERICAL;
+                }
+                if (currentLine.Contains("Толщина линзы: "))
+                {
+                    string temp = currentLine.Remove(0, 14);
+                    parseResult.LensThinckness = Double.Parse(temp);
+                }
+                if (currentLine.Contains("Ширина линзы: "))
+                {
+                    string temp = currentLine.Remove(0, 13);
+                    parseResult.LensWidth = Double.Parse(temp);
+                }
+                if (currentLine.Contains("Радиус: "))
+                {
+                    string temp = currentLine.Remove(0, 7);
+                    parseResult.Radius = Double.Parse(temp);
+                    MessageBox.Show(parseResult.LensName + " " + parseResult.Radius);
+                }
+                
+            }
+        }
+
     }
 }

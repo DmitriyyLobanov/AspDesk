@@ -16,6 +16,7 @@ namespace AsphericalSurface
 
             ApplicationConfiguration.Initialize();
             Application.Run(new CreateNewLensForm());
+
         }
     }
 }

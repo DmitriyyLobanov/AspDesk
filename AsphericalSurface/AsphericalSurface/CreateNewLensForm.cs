@@ -48,6 +48,8 @@ namespace AsphericalSurface
                 {
                     MessageBox.Show(newCustomLens.ToString() +"\n"+
                         "Lens file has been created!");
+                    Deserializer deserializer = new Deserializer();
+                    deserializer.DeserializeLensFromTXT();
                 }
                 else
                 {

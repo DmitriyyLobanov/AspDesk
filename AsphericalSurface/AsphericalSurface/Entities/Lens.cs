@@ -66,7 +66,7 @@ namespace AsphericalSurface.Entities
                     "Тип поверхности: " + this.Surface.ToString() + "\n" +
                     "Толщина линзы: " + this.LensThinckness + "\n" +
                     "Ширина линзы: " + this.LensWidth + "\n" +
-                    "Радиус при вершине: " + this.Radius + "\n" +
+                    "Радиус: " + this.Radius + "\n" +
                     "Кривизна поверхности: " + CalcCV(this.Radius) + "\n" +
                     "Коническая постоянная: " + K + "\n" +
                     "A4: " + this.CoefA4 + "\n" +
