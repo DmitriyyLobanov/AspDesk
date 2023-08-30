@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace AsphericalSurface.Entities.Interfaces
 {
-    internal interface IDeserializer
+    internal interface ILensStorage
     {
-        public List<Lens> DeserializeLensFromTXT();
+        public void updateList();
     }
 }

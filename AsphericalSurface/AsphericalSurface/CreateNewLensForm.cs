@@ -48,8 +48,6 @@ namespace AsphericalSurface
                 {
                     MessageBox.Show(newCustomLens.ToString() +"\n"+
                         "Lens file has been created!");
-                    Deserializer deserializer = new Deserializer();
-                    deserializer.DeserializeLensFromTXT();
                 }
                 else
                 {
@@ -59,7 +57,8 @@ namespace AsphericalSurface
         }
 
 
-
+        //TODO: Поля ввода ругаются на дробные числа с точкой, с запятой всё нормально принимают, разберись ёпта!
+        //TODO: Поля ввода должны проверяться на отрицательные значения ширины и толщины линзы
         private Boolean requiredFieldsCheck()
         {
             if (lensNameTextBox.Text == "" || 

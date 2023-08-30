@@ -14,11 +14,14 @@ namespace AsphericalSurface.Entities
         }
 
         //TODO: Реализовать десеарелизацию из файла с параметрами в объект линзы (взять путь у Environment) 
-        public void DeserializeLensFromTXT()
+        //TODO: Проработать исключения для десериализатора
+        public List<Lens> DeserializeLensFromTXT()
         {
             string userDocsFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string appStorageFolder = Path.Combine(userDocsFolder, "AsphericalSurface");
             string existLensFolder = Path.Combine(appStorageFolder, "ExistLenses");
+
+            List<Lens> parseLenses = new List<Lens>();
 
             try
             {
@@ -26,13 +29,11 @@ namespace AsphericalSurface.Entities
                 {
                     if (File.Exists(file)) 
                     {
-                        //string temp;
-                        //temp = File.ReadAllText(file);
-                        
-                        //MessageBox.Show(file);
-                        ParseFromTxt(file);
+                        Lens currentParseLens = ParseFromTxt(file);
+                        parseLenses.Add(currentParseLens);
                     }
                 }
+                return parseLenses;
             }
             catch (Exception)
             {
@@ -41,8 +42,8 @@ namespace AsphericalSurface.Entities
             }
         }
 
-        //TODO: Доделать метод парсинга данных из TXT файла
-        private void ParseFromTxt(string fullPath)
+        //TODO: Доделать метод парсинга данных из TXT файла, сделать изящнее, куча if это отстой
+        private Lens ParseFromTxt(string fullPath)
         {
             Lens parseResult = new Lens();
             foreach (var line in File.ReadAllLines(fullPath))
@@ -75,10 +76,39 @@ namespace AsphericalSurface.Entities
                 {
                     string temp = currentLine.Remove(0, 7);
                     parseResult.Radius = Double.Parse(temp);
-                    MessageBox.Show(parseResult.LensName + " " + parseResult.Radius);
                 }
-                
+                if (currentLine.Contains("Коническая постоянная: ") && parseResult.Surface == SURFACE_TYPES.ASPHERICAL)
+                {
+                    string temp = currentLine.Remove(0, 22);
+                    parseResult.K = Double.Parse(temp);
+                }
+                if (currentLine.Contains("A4: ") && parseResult.Surface == SURFACE_TYPES.ASPHERICAL)
+                {
+                    string temp = currentLine.Remove(0, 3);
+                    parseResult.CoefA4 = Double.Parse(temp);
+                }
+                if (currentLine.Contains("A6: ") && parseResult.Surface == SURFACE_TYPES.ASPHERICAL)
+                {
+                    string temp = currentLine.Remove(0, 3);
+                    parseResult.CoefA6 = Double.Parse(temp);
+                }
+                if (currentLine.Contains("A8: ") && parseResult.Surface == SURFACE_TYPES.ASPHERICAL)
+                {
+                    string temp = currentLine.Remove(0, 3);
+                    parseResult.CoefA8 = Double.Parse(temp);
+                }
+                if (currentLine.Contains("A10: ") && parseResult.Surface == SURFACE_TYPES.ASPHERICAL)
+                {
+                    string temp = currentLine.Remove(0, 4);
+                    parseResult.CoefA10 = Double.Parse(temp);
+                }
+                if (currentLine.Contains("A12: ") && parseResult.Surface == SURFACE_TYPES.ASPHERICAL)
+                {
+                    string temp = currentLine.Remove(0, 4);
+                    parseResult.CoefA12 = Double.Parse(temp);
+                }
             }
+            return parseResult;
         }
 
     }
