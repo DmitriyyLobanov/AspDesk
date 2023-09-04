@@ -18,11 +18,18 @@ namespace AsphericalSurface.Entities
             this.deserializer = deserializer;
         }
 
+
+        //TODO: Возможно стоит в дальнейшем перенести его в private
         public void updateList()
         {
             lens.Clear();
             lens = deserializer.DeserializeLensFromTXT();
         }
 
+        public List<Lens> getLens()
+        {
+            updateList();   
+            return lens;
+        }
     }
 }

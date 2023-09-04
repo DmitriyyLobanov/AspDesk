@@ -9,5 +9,6 @@ namespace AsphericalSurface.Entities.Interfaces
     internal interface ILensStorage
     {
         public void updateList();
+        public List<Lens> getLens();
     }
 }

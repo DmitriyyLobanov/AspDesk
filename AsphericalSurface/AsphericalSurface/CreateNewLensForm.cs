@@ -46,7 +46,7 @@ namespace AsphericalSurface
                 IController controller = new Controller();
                 if (controller.createNewLens(newCustomLens))
                 {
-                    MessageBox.Show(newCustomLens.ToString() +"\n"+
+                    MessageBox.Show(newCustomLens.ToString() + "\n" +
                         "Lens file has been created!");
                 }
                 else
@@ -61,7 +61,7 @@ namespace AsphericalSurface
         //TODO: Поля ввода должны проверяться на отрицательные значения ширины и толщины линзы
         private Boolean requiredFieldsCheck()
         {
-            if (lensNameTextBox.Text == "" || 
+            if (lensNameTextBox.Text == "" ||
                 LensWidthTextBox.Text == "" ||
                 lensThinknessTextBox.Text == "" ||
                 lensRadiusTextBox.Text == "")

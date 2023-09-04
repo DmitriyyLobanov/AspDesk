@@ -9,5 +9,7 @@ namespace AsphericalSurface.Entities.Interfaces
     internal interface IController
     {
         public Boolean createNewLens(Lens newLens);
+
+        public Boolean deleteLens(Lens lens);
     }
 }
