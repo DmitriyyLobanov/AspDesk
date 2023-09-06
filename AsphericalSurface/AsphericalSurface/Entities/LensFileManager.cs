@@ -38,7 +38,24 @@ namespace AsphericalSurface.Entities
         // TODO: Реализовать удаление файла
         public bool deleteLensFile(Lens lens)
         {
-            throw new NotImplementedException();
+            string baseFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string appStorageFolder = Path.Combine(baseFolder, "AsphericalSurface");
+            string existLensFolder = Path.Combine(appStorageFolder, "ExistLenses");
+
+            string temp = lens.LensName.Trim();
+            byte[] byteLensName = Encoding.Default.GetBytes(temp);
+
+            foreach (string file in Directory.GetFiles(existLensFolder))
+            {
+                byte[] byteFileName =Encoding.Default.GetBytes(Path.GetFileNameWithoutExtension(file));
+
+                if (BitConverter.ToString(byteLensName) == BitConverter.ToString(byteFileName))
+                {
+                    MessageBox.Show("OKKKK");
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

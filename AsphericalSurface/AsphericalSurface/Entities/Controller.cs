@@ -28,7 +28,11 @@ namespace AsphericalSurface.Entities
         //TODO: Реализовать удаление линзы/файла
         public bool deleteLens(Lens lens)
         {
-            throw new NotImplementedException();
+            if (lensFileManager.deleteLensFile(lens))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

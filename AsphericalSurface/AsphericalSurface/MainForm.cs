@@ -87,7 +87,15 @@ namespace AsphericalSurface
             Lens selectedLens = lens.ElementAt(existLensesListBox.SelectedIndex);
 
             IController controller = new Controller();
-            controller.deleteLens(selectedLens);
+            if (controller.deleteLens(selectedLens))
+            {
+                MessageBox.Show("Линза удалена");
+            }
+            else
+            {
+                MessageBox.Show("Линза не удалена");
+            }
+            
         }
     }
 }
