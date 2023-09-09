@@ -47,11 +47,11 @@ namespace AsphericalSurface.Entities
 
             foreach (string file in Directory.GetFiles(existLensFolder))
             {
-                byte[] byteFileName =Encoding.Default.GetBytes(Path.GetFileNameWithoutExtension(file));
+                byte[] byteFileName = Encoding.Default.GetBytes(Path.GetFileNameWithoutExtension(file));
 
                 if (BitConverter.ToString(byteLensName) == BitConverter.ToString(byteFileName))
                 {
-                    MessageBox.Show("OKKKK");
+                    File.Delete(file);
                     return true;
                 }
             }

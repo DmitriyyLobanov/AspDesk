@@ -35,6 +35,7 @@
             updateListButton = new Button();
             showInfoButton = new Button();
             deleteLensButton = new Button();
+            createNewLensButton = new Button();
             SuspendLayout();
             // 
             // existLensesListBox
@@ -102,11 +103,22 @@
             deleteLensButton.UseVisualStyleBackColor = true;
             deleteLensButton.Click += deleteLensButton_Click;
             // 
+            // createNewLensButton
+            // 
+            createNewLensButton.Location = new Point(119, 338);
+            createNewLensButton.Name = "createNewLensButton";
+            createNewLensButton.Size = new Size(181, 23);
+            createNewLensButton.TabIndex = 7;
+            createNewLensButton.Text = "Создать новую линзу";
+            createNewLensButton.UseVisualStyleBackColor = true;
+            createNewLensButton.Click += createNewLensButton_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(813, 623);
+            Controls.Add(createNewLensButton);
             Controls.Add(deleteLensButton);
             Controls.Add(showInfoButton);
             Controls.Add(updateListButton);
@@ -116,6 +128,7 @@
             Controls.Add(existLensesListBox);
             Name = "MainForm";
             Text = "AsphericalSurface";
+            FormClosing += MainForm_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -129,5 +142,6 @@
         private Button updateListButton;
         private Button showInfoButton;
         private Button deleteLensButton;
+        private Button createNewLensButton;
     }
 }

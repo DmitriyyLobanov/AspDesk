@@ -57,6 +57,7 @@
             descriptionTextPictureBox = new PictureBox();
             requiredFieldsLabel = new Label();
             createNewLensButton = new Button();
+            backToMainFormButton = new Button();
             ((System.ComponentModel.ISupportInitialize)lensNamePictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)lensWidthPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)lensThinknessPictureBox).BeginInit();
@@ -303,11 +304,22 @@
             createNewLensButton.UseVisualStyleBackColor = true;
             createNewLensButton.MouseClick += createNewLensButton_MouseClick;
             // 
+            // backToMainFormButton
+            // 
+            backToMainFormButton.Location = new Point(184, 426);
+            backToMainFormButton.Name = "backToMainFormButton";
+            backToMainFormButton.Size = new Size(120, 23);
+            backToMainFormButton.TabIndex = 28;
+            backToMainFormButton.Text = "Назад";
+            backToMainFormButton.UseVisualStyleBackColor = true;
+            backToMainFormButton.Click += backToMainFormButton_Click;
+            // 
             // CreateNewLensForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(475, 500);
+            Controls.Add(backToMainFormButton);
             Controls.Add(createNewLensButton);
             Controls.Add(requiredFieldsLabel);
             Controls.Add(descriptionTextPictureBox);
@@ -338,6 +350,7 @@
             Controls.Add(lensNameTextBox);
             Name = "CreateNewLensForm";
             Text = "Создание новой линзы";
+            FormClosing += CreateNewLensForm_FormClosing;
             ((System.ComponentModel.ISupportInitialize)lensNamePictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)lensWidthPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)lensThinknessPictureBox).EndInit();
@@ -377,5 +390,6 @@
         private PictureBox descriptionTextPictureBox;
         private Label requiredFieldsLabel;
         private Button createNewLensButton;
+        private Button backToMainFormButton;
     }
 }

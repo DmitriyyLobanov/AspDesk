@@ -15,7 +15,7 @@ namespace AsphericalSurface
     public partial class CreateNewLensForm : Form
     {
 
-
+        private MainForm mainForm;
 
         public CreateNewLensForm()
         {
@@ -56,6 +56,12 @@ namespace AsphericalSurface
             }
         }
 
+        private void backToMainFormButton_Click(object sender, EventArgs e)
+        {
+            mainForm = new MainForm();
+            mainForm.Show();
+            this.Hide();
+        }
 
         //TODO: Поля ввода ругаются на дробные числа с точкой, с запятой всё нормально принимают, разберись ёпта!
         //TODO: Поля ввода должны проверяться на отрицательные значения ширины и толщины линзы
@@ -88,5 +94,9 @@ namespace AsphericalSurface
             return false;
         }
 
+        private void CreateNewLensForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

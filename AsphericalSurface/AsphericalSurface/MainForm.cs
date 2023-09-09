@@ -14,6 +14,7 @@ namespace AsphericalSurface
 {
     public partial class MainForm : Form
     {
+        private CreateNewLensForm createNewLensForm;
 
         public MainForm()
         {
@@ -90,12 +91,25 @@ namespace AsphericalSurface
             if (controller.deleteLens(selectedLens))
             {
                 MessageBox.Show("Линза удалена");
+                updateList();
             }
             else
             {
                 MessageBox.Show("Линза не удалена");
             }
-            
+
+        }
+
+        private void createNewLensButton_Click(object sender, EventArgs e)
+        {
+            createNewLensForm = new CreateNewLensForm();
+            createNewLensForm.Show();
+            this.Hide();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
