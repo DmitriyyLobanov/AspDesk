@@ -16,3 +16,4 @@ C:\Users\Dmitriy\Desktop\AspDesk\AsphericalSurface\AsphericalSurface\obj\Debug\n
 C:\Users\Dmitriy\Desktop\AspDesk\AsphericalSurface\AsphericalSurface\obj\Debug\net6.0-windows\AsphericalSurface.genruntimeconfig.cache
 C:\Users\Dmitriy\Desktop\AspDesk\AsphericalSurface\AsphericalSurface\obj\Debug\net6.0-windows\ref\AsphericalSurface.dll
 C:\Users\Dmitriy\Desktop\AspDesk\AsphericalSurface\AsphericalSurface\obj\Debug\net6.0-windows\AsphericalSurface.MainForm.resources
+C:\Users\Dmitriy\Desktop\AspDesk\AsphericalSurface\AsphericalSurface\obj\Debug\net6.0-windows\AsphericalSurface.EditLensForm.resources

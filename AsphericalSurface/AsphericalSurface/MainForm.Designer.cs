@@ -36,6 +36,7 @@
             showInfoButton = new Button();
             deleteLensButton = new Button();
             createNewLensButton = new Button();
+            editLensButton = new Button();
             SuspendLayout();
             // 
             // existLensesListBox
@@ -49,7 +50,7 @@
             // 
             // singleLensInfoTextBox
             // 
-            singleLensInfoTextBox.Location = new Point(386, 90);
+            singleLensInfoTextBox.Location = new Point(407, 90);
             singleLensInfoTextBox.Multiline = true;
             singleLensInfoTextBox.Name = "singleLensInfoTextBox";
             singleLensInfoTextBox.Size = new Size(181, 213);
@@ -85,9 +86,9 @@
             // 
             // showInfoButton
             // 
-            showInfoButton.Location = new Point(306, 129);
+            showInfoButton.Location = new Point(306, 89);
             showInfoButton.Name = "showInfoButton";
-            showInfoButton.Size = new Size(74, 65);
+            showInfoButton.Size = new Size(95, 65);
             showInfoButton.TabIndex = 5;
             showInfoButton.Text = "Показать инфо";
             showInfoButton.UseVisualStyleBackColor = true;
@@ -95,9 +96,9 @@
             // 
             // deleteLensButton
             // 
-            deleteLensButton.Location = new Point(306, 200);
+            deleteLensButton.Location = new Point(306, 160);
             deleteLensButton.Name = "deleteLensButton";
-            deleteLensButton.Size = new Size(74, 65);
+            deleteLensButton.Size = new Size(95, 65);
             deleteLensButton.TabIndex = 6;
             deleteLensButton.Text = "Удалить линзу";
             deleteLensButton.UseVisualStyleBackColor = true;
@@ -113,11 +114,23 @@
             createNewLensButton.UseVisualStyleBackColor = true;
             createNewLensButton.Click += createNewLensButton_Click;
             // 
+            // editLensButton
+            // 
+            editLensButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            editLensButton.Location = new Point(306, 231);
+            editLensButton.Name = "editLensButton";
+            editLensButton.Size = new Size(95, 65);
+            editLensButton.TabIndex = 8;
+            editLensButton.Text = "Редактировать линзу";
+            editLensButton.UseVisualStyleBackColor = true;
+            editLensButton.Click += editLensButton_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(813, 623);
+            Controls.Add(editLensButton);
             Controls.Add(createNewLensButton);
             Controls.Add(deleteLensButton);
             Controls.Add(showInfoButton);
@@ -143,5 +156,6 @@
         private Button showInfoButton;
         private Button deleteLensButton;
         private Button createNewLensButton;
+        private Button editLensButton;
     }
 }

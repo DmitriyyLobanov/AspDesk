@@ -22,6 +22,8 @@ namespace AsphericalSurface
             InitializeComponent();
         }
 
+
+        //TODO: Добавить проверку сравнения имени линзы с именами имеющихся линз, если такая уже есть не создавать новую
         // TODO: Тестировать с разными значениями, дополнить бОльшим количеством проверок (как пример подумать над значениями
         // коэффициентов и конической константы). 
         private void createNewLensButton_MouseClick(object sender, MouseEventArgs e)
@@ -48,6 +50,7 @@ namespace AsphericalSurface
                 {
                     MessageBox.Show(newCustomLens.ToString() + "\n" +
                         "Lens file has been created!");
+                    returnToMainForm();
                 }
                 else
                 {
@@ -57,6 +60,10 @@ namespace AsphericalSurface
         }
 
         private void backToMainFormButton_Click(object sender, EventArgs e)
+        {
+            returnToMainForm();
+        }
+        private void returnToMainForm()
         {
             mainForm = new MainForm();
             mainForm.Show();

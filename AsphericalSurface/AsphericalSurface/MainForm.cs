@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace AsphericalSurface
     public partial class MainForm : Form
     {
         private CreateNewLensForm createNewLensForm;
+        private EditLensForm editLensForm;
 
         public MainForm()
         {
@@ -110,6 +112,28 @@ namespace AsphericalSurface
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void editLensButton_Click(object sender, EventArgs e)
+        {
+            if (existLensesListBox.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Выберите линзу из списка!");
+                return;
+            }
+
+            IDeserializer deserializer = new Deserializer();
+            ILensStorage lensStorage = new LensStorage(deserializer);
+            List<Lens> lens = lensStorage.getLens();
+            Lens selectedLens = lens.ElementAt(existLensesListBox.SelectedIndex);
+
+            var options = new JsonSerializerOptions {WriteIndented = true };
+            string jsonLens = JsonSerializer.Serialize(selectedLens, options);
+            
+            editLensForm = new EditLensForm(jsonLens);
+            editLensForm.Show();
+            this.Hide();
+
         }
     }
 }
