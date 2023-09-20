@@ -12,4 +12,5 @@ namespace AsphericalSurface.Entities.Interfaces
 
         public bool deleteLensFile(Lens lens);
     }
+
 }

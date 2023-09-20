@@ -11,4 +11,5 @@ namespace AsphericalSurface.Entities.Interfaces
         public void updateList();
         public List<Lens> getLens();
     }
+
 }

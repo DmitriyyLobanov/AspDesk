@@ -1,4 +1,5 @@
 ﻿using AsphericalSurface.Entities;
+using AsphericalSurface.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,7 +60,7 @@ namespace AsphericalSurface
             throw new NotImplementedException();
         }
 
-        //TODO: ПРОВЕРКИ!
+        //TODO: ПРОВЕРКА на попытку создания линз с одинаковыми именами файлов!
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (!requiredFieldsCheck() || !dataTypeCheck())
@@ -74,6 +75,36 @@ namespace AsphericalSurface
             else
             {
                 MessageBox.Show("Изменения внесены!");
+                Lens changedLens = new Lens(lensNameTextBox.Text.TrimStart(),
+                                                Double.Parse(lensThinknessTextBox.Text),
+                                                Double.Parse(LensWidthTextBox.Text),
+                                                Double.Parse(lensRadiusTextBox.Text),
+                                                Double.Parse(conicConstTextBox.Text),
+                                                Double.Parse(coef_A4_TextBox.Text),
+                                                Double.Parse(coef_A6_TextBox.Text),
+                                                Double.Parse(coef_A8_TextBox.Text),
+                                                Double.Parse(coef_A10_TextBox.Text),
+                                                Double.Parse(coef_A12_TextBox.Text)
+                                                );
+                IController controller = new Controller();
+
+                if (controller.deleteLens(editableLens))
+                {
+                    MessageBox.Show("Переданная линза удалена!");
+                    if (controller.createNewLens(changedLens))
+                    {
+                        MessageBox.Show("Новая линза на место удалённой создана!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Новая линза на место удалённой НЕ создана!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Переданная линза НЕ удалена!");
+                }
+
                 returnToMainForm();
             }
         }
@@ -149,4 +180,5 @@ namespace AsphericalSurface
 
 
     }
+
 }

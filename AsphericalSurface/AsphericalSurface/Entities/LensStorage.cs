@@ -32,4 +32,5 @@ namespace AsphericalSurface.Entities
             return lens;
         }
     }
+
 }

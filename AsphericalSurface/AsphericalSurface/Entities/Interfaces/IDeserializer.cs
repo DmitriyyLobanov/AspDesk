@@ -10,4 +10,5 @@ namespace AsphericalSurface.Entities.Interfaces
     {
         public List<Lens> DeserializeLensFromTXT();
     }
+
 }

@@ -11,4 +11,5 @@ namespace AsphericalSurface.Entities
         SPHERICAL,
         ASPHERICAL
     }
+
 }

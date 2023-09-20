@@ -27,6 +27,7 @@ namespace AsphericalSurface
 
         private void updateListButton_Click(object sender, EventArgs e)
         {
+            singleLensInfoTextBox.Text = string.Empty;
             existLensesListBox.BeginUpdate();
             updateList();
             existLensesListBox.EndUpdate();
@@ -79,6 +80,7 @@ namespace AsphericalSurface
 
         private void deleteLensButton_Click(object sender, EventArgs e)
         {
+            singleLensInfoTextBox.Text = string.Empty;
             if (existLensesListBox.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Выберите линзу из списка!");
@@ -127,8 +129,7 @@ namespace AsphericalSurface
             List<Lens> lens = lensStorage.getLens();
             Lens selectedLens = lens.ElementAt(existLensesListBox.SelectedIndex);
 
-            var options = new JsonSerializerOptions {WriteIndented = true };
-            string jsonLens = JsonSerializer.Serialize(selectedLens, options);
+            string jsonLens = JsonSerializer.Serialize(selectedLens);
             
             editLensForm = new EditLensForm(jsonLens);
             editLensForm.Show();
@@ -136,4 +137,5 @@ namespace AsphericalSurface
 
         }
     }
+
 }

@@ -35,7 +35,7 @@ namespace AsphericalSurface.Entities
             return true;
         }
 
-        // TODO: Реализовать удаление файла
+
         public bool deleteLensFile(Lens lens)
         {
             string baseFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -57,5 +57,8 @@ namespace AsphericalSurface.Entities
             }
             return false;
         }
+
+
     }
+
 }

@@ -1,6 +1,7 @@
 ﻿using AsphericalSurface.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace AsphericalSurface.Entities
             return false;
         }
 
-        //TODO: Реализовать удаление линзы/файла
+
         public bool deleteLens(Lens lens)
         {
             if (lensFileManager.deleteLensFile(lens))
@@ -34,5 +35,7 @@ namespace AsphericalSurface.Entities
             }
             return false;
         }
+
     }
+
 }
