@@ -130,11 +130,34 @@ namespace AsphericalSurface
             Lens selectedLens = lens.ElementAt(existLensesListBox.SelectedIndex);
 
             string jsonLens = JsonSerializer.Serialize(selectedLens);
-            
+
             editLensForm = new EditLensForm(jsonLens);
             editLensForm.Show();
             this.Hide();
 
+        }
+
+        private void lensScaleTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая а ASCII
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void scaleLensButton_Click(object sender, EventArgs e)
+        {
+            //if (existLensesListBox.SelectedItems.Count == 0)
+            //{
+            //    MessageBox.Show("Выберите линзу из списка!");
+            //    return;
+            //}
+            if (Double.Parse(lensScaleTextBox.Text.ToString()) >= 100 || Double.Parse(lensScaleTextBox.Text.ToString()) <= 1)
+            {
+                MessageBox.Show("Введите значение коэффициента масштабирования в диапазоне от 1 до 99.");
+                return;
+            }
         }
     }
 

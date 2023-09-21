@@ -37,6 +37,9 @@
             deleteLensButton = new Button();
             createNewLensButton = new Button();
             editLensButton = new Button();
+            scaleLensButton = new Button();
+            lensScaleTextBox = new TextBox();
+            lensScaleLabel = new Label();
             SuspendLayout();
             // 
             // existLensesListBox
@@ -125,11 +128,47 @@
             editLensButton.UseVisualStyleBackColor = true;
             editLensButton.Click += editLensButton_Click;
             // 
+            // scaleLensButton
+            // 
+            scaleLensButton.Location = new Point(119, 437);
+            scaleLensButton.Name = "scaleLensButton";
+            scaleLensButton.Size = new Size(216, 46);
+            scaleLensButton.TabIndex = 9;
+            scaleLensButton.Text = "Отмасштабировать линзу";
+            scaleLensButton.UseVisualStyleBackColor = true;
+            scaleLensButton.Click += scaleLensButton_Click;
+            // 
+            // lensScaleTextBox
+            // 
+            lensScaleTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lensScaleTextBox.Location = new Point(235, 403);
+            lensScaleTextBox.MaxLength = 5;
+            lensScaleTextBox.Name = "lensScaleTextBox";
+            lensScaleTextBox.Size = new Size(100, 29);
+            lensScaleTextBox.TabIndex = 10;
+            lensScaleTextBox.Text = "1";
+            lensScaleTextBox.TextAlign = HorizontalAlignment.Center;
+            lensScaleTextBox.KeyPress += lensScaleTextBox_KeyPress;
+            // 
+            // lensScaleLabel
+            // 
+            lensScaleLabel.AutoSize = true;
+            lensScaleLabel.Location = new Point(119, 402);
+            lensScaleLabel.MaximumSize = new Size(110, 0);
+            lensScaleLabel.Name = "lensScaleLabel";
+            lensScaleLabel.Size = new Size(110, 30);
+            lensScaleLabel.TabIndex = 11;
+            lensScaleLabel.Text = "Коэффициент масштабирования";
+            lensScaleLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(813, 623);
+            Controls.Add(lensScaleLabel);
+            Controls.Add(lensScaleTextBox);
+            Controls.Add(scaleLensButton);
             Controls.Add(editLensButton);
             Controls.Add(createNewLensButton);
             Controls.Add(deleteLensButton);
@@ -157,5 +196,8 @@
         private Button deleteLensButton;
         private Button createNewLensButton;
         private Button editLensButton;
+        private Button scaleLensButton;
+        private TextBox lensScaleTextBox;
+        private Label lensScaleLabel;
     }
 }
