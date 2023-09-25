@@ -58,7 +58,29 @@ namespace AsphericalSurface.Entities
             return false;
         }
 
+        public StringBuilder createSurfaceDots(Lens lens)
+        {
+            StringBuilder dots = dotCalc(lens);
 
+            return dots;
+        }
+
+
+        
+        private StringBuilder dotCalc(Lens lens)
+        {
+            string tempString = "";
+            StringBuilder dotsWithNewLineChar = new StringBuilder();
+            double y;
+            for (double x = -lens.LensWidth / 2; x <= lens.LensWidth / 2; x += 0.001)
+            {
+                y = Math.Pow(x, 2) / (lens.Radius + Math.Sqrt((Math.Pow(lens.Radius, 2) - (1 + lens.K) * Math.Pow(x, 2)))) + lens.CoefA4 * Math.Pow(x, 4) + lens.CoefA6 * Math.Pow(x, 6) +
+                    +lens.CoefA8 * Math.Pow(x, 8) + lens.CoefA10 * Math.Pow(x, 10) + lens.CoefA12 * Math.Pow(x, 12);
+                tempString = Math.Round(x, 3).ToString().Replace(',', '.') + " " + (-y).ToString().Replace(',', '.') + Environment.NewLine;
+                dotsWithNewLineChar.Append(tempString);
+            }
+            return dotsWithNewLineChar;
+        }
     }
 
 }

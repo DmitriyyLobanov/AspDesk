@@ -40,6 +40,8 @@
             scaleLensButton = new Button();
             lensScaleTextBox = new TextBox();
             lensScaleLabel = new Label();
+            createDotsFileButton = new Button();
+            saveFileDialog = new SaveFileDialog();
             SuspendLayout();
             // 
             // existLensesListBox
@@ -161,11 +163,26 @@
             lensScaleLabel.Text = "Коэффициент масштабирования";
             lensScaleLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // createDotsFileButton
+            // 
+            createDotsFileButton.Location = new Point(362, 437);
+            createDotsFileButton.Name = "createDotsFileButton";
+            createDotsFileButton.Size = new Size(226, 46);
+            createDotsFileButton.TabIndex = 12;
+            createDotsFileButton.Text = "Создать файл с массивом точек";
+            createDotsFileButton.UseVisualStyleBackColor = true;
+            createDotsFileButton.Click += createDotsFileButton_Click;
+            // 
+            // saveFileDialog
+            // 
+            saveFileDialog.Filter = "(*.txt)|.txt";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(813, 623);
+            ClientSize = new Size(702, 545);
+            Controls.Add(createDotsFileButton);
             Controls.Add(lensScaleLabel);
             Controls.Add(lensScaleTextBox);
             Controls.Add(scaleLensButton);
@@ -178,7 +195,9 @@
             Controls.Add(existLensesLabel);
             Controls.Add(singleLensInfoTextBox);
             Controls.Add(existLensesListBox);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AsphericalSurface";
             FormClosing += MainForm_FormClosing;
             ResumeLayout(false);
@@ -199,5 +218,7 @@
         private Button scaleLensButton;
         private TextBox lensScaleTextBox;
         private Label lensScaleLabel;
+        private Button createDotsFileButton;
+        private SaveFileDialog saveFileDialog;
     }
 }

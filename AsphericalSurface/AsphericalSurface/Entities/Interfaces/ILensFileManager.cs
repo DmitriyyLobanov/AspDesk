@@ -11,6 +11,8 @@ namespace AsphericalSurface.Entities.Interfaces
         public bool createNewLensFile(Lens newLens);
 
         public bool deleteLensFile(Lens lens);
+
+        public StringBuilder createSurfaceDots(Lens lens);
     }
 
 }

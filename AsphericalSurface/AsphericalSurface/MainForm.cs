@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -148,17 +149,76 @@ namespace AsphericalSurface
 
         private void scaleLensButton_Click(object sender, EventArgs e)
         {
-            //if (existLensesListBox.SelectedItems.Count == 0)
-            //{
-            //    MessageBox.Show("Выберите линзу из списка!");
-            //    return;
-            //}
+            if (existLensesListBox.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Выберите линзу из списка!");
+                return;
+            }
             if (Double.Parse(lensScaleTextBox.Text.ToString()) >= 100 || Double.Parse(lensScaleTextBox.Text.ToString()) <= 1)
             {
                 MessageBox.Show("Введите значение коэффициента масштабирования в диапазоне от 1 до 99.");
                 return;
             }
+            IDeserializer deserializer = new Deserializer();
+            ILensStorage lensStorage = new LensStorage(deserializer);
+
+            List<Lens> lens = lensStorage.getLens();
+            Lens selectedLens = lens.ElementAt(existLensesListBox.SelectedIndex);
+
+            IController controller = new Controller();
+            Lens newMacroLens = controller.calculateMacroLens(selectedLens, Double.Parse(lensScaleTextBox.Text));
+
+
+            if (controller.createNewLens(newMacroLens))
+            {
+                MessageBox.Show("Линза отмасштабирована и создана.");
+                updateList();
+            }
+            else
+            {
+                MessageBox.Show("Ошибка масштабирования.");
+            }
+
         }
+
+        private void createDotsFileButton_Click(object sender, EventArgs e)
+        {
+            if (existLensesListBox.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Выберите линзу из списка!");
+                return;
+            }
+            IController controller = new Controller();
+            IDeserializer deserializer = new Deserializer();
+            ILensStorage lensStorage = new LensStorage(deserializer);
+
+            List<Lens> lens = lensStorage.getLens();
+            Lens selectedLens = lens.ElementAt(existLensesListBox.SelectedIndex);
+            StringBuilder sb = controller.createDotsFile(selectedLens);
+
+            Stream myStream;
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            saveFileDialog.Title = "Выберите директорию для сохранения файла";
+            saveFileDialog.FileName = "macroLens";
+            saveFileDialog.DefaultExt = "txt";
+            saveFileDialog.AddExtension = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if ((myStream = saveFileDialog.OpenFile()) != null)
+                {
+                    string text = sb.ToString();
+                    byte[] bytes = Encoding.UTF8.GetBytes(text);
+
+                    myStream.Write(bytes, 0, bytes.Length);
+
+                    myStream.Close();
+                }
+            }
+        }
+
+
     }
 
 }

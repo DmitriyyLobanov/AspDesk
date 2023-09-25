@@ -11,6 +11,9 @@ namespace AsphericalSurface.Entities.Interfaces
         public Boolean createNewLens(Lens newLens);
 
         public Boolean deleteLens(Lens lens);
+
+        public Lens calculateMacroLens(Lens scalableLens, double scaleCoef);
+        public StringBuilder createDotsFile(Lens lens);
     }
 
 }

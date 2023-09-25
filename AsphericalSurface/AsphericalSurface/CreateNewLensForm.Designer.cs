@@ -348,7 +348,9 @@
             Controls.Add(lensNameLabel);
             Controls.Add(createNewLensLabel);
             Controls.Add(lensNameTextBox);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "CreateNewLensForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Создание новой линзы";
             FormClosing += CreateNewLensForm_FormClosing;
             ((System.ComponentModel.ISupportInitialize)lensNamePictureBox).EndInit();
