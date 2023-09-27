@@ -200,7 +200,7 @@ namespace AsphericalSurface
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             saveFileDialog.Title = "Выберите директорию для сохранения файла";
-            saveFileDialog.FileName = "macroLens";
+            saveFileDialog.FileName = selectedLens.LensName + "_Dots";
             saveFileDialog.DefaultExt = "txt";
             saveFileDialog.AddExtension = true;
 

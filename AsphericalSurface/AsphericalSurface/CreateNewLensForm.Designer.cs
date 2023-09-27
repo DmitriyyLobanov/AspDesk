@@ -96,6 +96,7 @@
             LensWidthTextBox.Name = "LensWidthTextBox";
             LensWidthTextBox.Size = new Size(134, 23);
             LensWidthTextBox.TabIndex = 3;
+            LensWidthTextBox.KeyPress += LensWidthTextBox_KeyPress;
             // 
             // lensThinknessTextBox
             // 
@@ -103,6 +104,7 @@
             lensThinknessTextBox.Name = "lensThinknessTextBox";
             lensThinknessTextBox.Size = new Size(134, 23);
             lensThinknessTextBox.TabIndex = 4;
+            lensThinknessTextBox.KeyPress += lensThinknessTextBox_KeyPress;
             // 
             // lensRadiusTextBox
             // 
@@ -110,6 +112,7 @@
             lensRadiusTextBox.Name = "lensRadiusTextBox";
             lensRadiusTextBox.Size = new Size(134, 23);
             lensRadiusTextBox.TabIndex = 5;
+            lensRadiusTextBox.KeyPress += lensRadiusTextBox_KeyPress;
             // 
             // conicConstTextBox
             // 
@@ -118,6 +121,7 @@
             conicConstTextBox.Size = new Size(134, 23);
             conicConstTextBox.TabIndex = 6;
             conicConstTextBox.Text = "0";
+            conicConstTextBox.KeyPress += conicConstTextBox_KeyPress;
             // 
             // coef_A4_TextBox
             // 
@@ -126,6 +130,7 @@
             coef_A4_TextBox.Size = new Size(134, 23);
             coef_A4_TextBox.TabIndex = 7;
             coef_A4_TextBox.Text = "0";
+            coef_A4_TextBox.KeyPress += coef_A4_TextBox_KeyPress;
             // 
             // coef_A6_TextBox
             // 
@@ -134,6 +139,7 @@
             coef_A6_TextBox.Size = new Size(134, 23);
             coef_A6_TextBox.TabIndex = 8;
             coef_A6_TextBox.Text = "0";
+            coef_A6_TextBox.KeyPress += coef_A6_TextBox_KeyPress;
             // 
             // coef_A8_TextBox
             // 
@@ -142,6 +148,7 @@
             coef_A8_TextBox.Size = new Size(134, 23);
             coef_A8_TextBox.TabIndex = 9;
             coef_A8_TextBox.Text = "0";
+            coef_A8_TextBox.KeyPress += coef_A8_TextBox_KeyPress;
             // 
             // lensWidthLabel
             // 
@@ -186,6 +193,7 @@
             coef_A10_TextBox.Size = new Size(134, 23);
             coef_A10_TextBox.TabIndex = 14;
             coef_A10_TextBox.Text = "0";
+            coef_A10_TextBox.KeyPress += coef_A10_TextBox_KeyPress;
             // 
             // coef_A12_TextBox
             // 
@@ -194,6 +202,7 @@
             coef_A12_TextBox.Size = new Size(134, 23);
             coef_A12_TextBox.TabIndex = 15;
             coef_A12_TextBox.Text = "0";
+            coef_A12_TextBox.KeyPress += coef_A12_TextBox_KeyPress;
             // 
             // coef_A4_Label
             // 

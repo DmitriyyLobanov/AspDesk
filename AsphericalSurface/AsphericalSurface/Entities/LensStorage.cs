@@ -19,7 +19,6 @@ namespace AsphericalSurface.Entities
         }
 
 
-        //TODO: Возможно стоит в дальнейшем перенести его в private
         public void updateList()
         {
             lens.Clear();

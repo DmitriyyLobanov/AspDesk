@@ -23,14 +23,27 @@ namespace AsphericalSurface
         }
 
 
-        //TODO: Добавить проверку сравнения имени линзы с именами имеющихся линз, если такая уже есть не создавать новую
         // TODO: Тестировать с разными значениями, дополнить бОльшим количеством проверок (как пример подумать над значениями
         // коэффициентов и конической константы). 
         private void createNewLensButton_MouseClick(object sender, MouseEventArgs e)
         {
-            if (!requiredFieldsCheck() || !dataTypeCheck())
+            ILensStorage storage = new LensStorage(new Deserializer());
+            List<Lens> list = storage.getLens();
+
+            if (!requiredFieldsCheck())
             {
                 MessageBox.Show("Заполните обязательные поля!");
+                return;
+            }
+            if (!dataTypeCheck())
+            {
+                MessageBox.Show("Заполните поля корректными значениями!");
+                return;
+            }
+            if (!checkingExistbyName(list, lensNameTextBox.Text))
+            {
+                MessageBox.Show("Линза с таким именем уже существует!");
+                return;
             }
             else
             {
@@ -48,7 +61,7 @@ namespace AsphericalSurface
                 IController controller = new Controller();
                 if (controller.createNewLens(newCustomLens))
                 {
-                    MessageBox.Show(newCustomLens.ToString() + "\n" +
+                    MessageBox.Show(newCustomLens.ToString() + Environment.NewLine +
                         "Lens file has been created!");
                     returnToMainForm();
                 }
@@ -101,9 +114,102 @@ namespace AsphericalSurface
             return false;
         }
 
+        private Boolean checkingExistbyName(List<Lens> list, string nameForChecking)
+        {
+            foreach (Lens l in list)
+            {
+                if (l.LensName.Trim().Equals(nameForChecking.Trim()))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private void CreateNewLensForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void LensWidthTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая а ASCII
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void lensThinknessTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая а ASCII
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void lensRadiusTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая а ASCII
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void conicConstTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая а ASCII
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void coef_A4_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 45) //цифры, клавиша BackSpace и запятая а ASCII, -
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void coef_A6_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 45) //цифры, клавиша BackSpace и запятая а ASCII, -
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void coef_A8_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 45) //цифры, клавиша BackSpace и запятая а ASCII, -
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void coef_A10_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 45) //цифры, клавиша BackSpace и запятая а ASCII, -
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void coef_A12_TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 45) //цифры, клавиша BackSpace и запятая а ASCII, -
+            {
+                e.Handled = true;
+            }
         }
     }
 
