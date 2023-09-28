@@ -83,8 +83,8 @@ namespace AsphericalSurface
             this.Hide();
         }
 
-        //TODO: Поля ввода ругаются на дробные числа с точкой, с запятой всё нормально принимают, разберись ёпта!
-        //TODO: Поля ввода должны проверяться на отрицательные значения ширины и толщины линзы
+
+
         private Boolean requiredFieldsCheck()
         {
             if (lensNameTextBox.Text == "" ||
@@ -161,7 +161,7 @@ namespace AsphericalSurface
         private void conicConstTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая а ASCII
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 45) //цифры, клавиша BackSpace, минус и запятая а ASCII
             {
                 e.Handled = true;
             }
@@ -170,7 +170,8 @@ namespace AsphericalSurface
         private void coef_A4_TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 45) //цифры, клавиша BackSpace и запятая а ASCII, -
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 &&
+                number != 44 && number != 45 && number !=69 && number != 43) //цифры, клавиша BackSpace и запятая а ASCII, минус плюс и Е
             {
                 e.Handled = true;
             }
@@ -179,7 +180,8 @@ namespace AsphericalSurface
         private void coef_A6_TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 45) //цифры, клавиша BackSpace и запятая а ASCII, -
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 &&
+                number != 44 && number != 45 && number != 69 && number != 43) //цифры, клавиша BackSpace и запятая а ASCII, минус плюс и Е
             {
                 e.Handled = true;
             }
@@ -188,7 +190,8 @@ namespace AsphericalSurface
         private void coef_A8_TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 45) //цифры, клавиша BackSpace и запятая а ASCII, -
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 &&
+                number != 44 && number != 45 && number != 69 && number != 43) //цифры, клавиша BackSpace и запятая а ASCII, минус плюс и Е
             {
                 e.Handled = true;
             }
@@ -197,7 +200,8 @@ namespace AsphericalSurface
         private void coef_A10_TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 45) //цифры, клавиша BackSpace и запятая а ASCII, -
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 &&
+                number != 44 && number != 45 && number != 69 && number != 43) //цифры, клавиша BackSpace и запятая а ASCII, минус плюс и Е
             {
                 e.Handled = true;
             }
@@ -206,7 +210,8 @@ namespace AsphericalSurface
         private void coef_A12_TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 45) //цифры, клавиша BackSpace и запятая а ASCII, -
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 &&
+                number != 44 && number != 45 && number != 69 && number != 43) //цифры, клавиша BackSpace и запятая а ASCII, минус плюс и Е
             {
                 e.Handled = true;
             }

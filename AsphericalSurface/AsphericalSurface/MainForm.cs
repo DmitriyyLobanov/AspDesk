@@ -37,6 +37,13 @@ namespace AsphericalSurface
 
         private void updateList()
         {
+            string baseFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string appStorageFolder = Path.Combine(baseFolder, "AsphericalSurface");
+            string existLensFolder = Path.Combine(appStorageFolder, "ExistLenses");
+
+            Directory.CreateDirectory(appStorageFolder);
+            Directory.CreateDirectory(existLensFolder);
+
             existLensesListBox.Items.Clear();
             IDeserializer deserializer = new Deserializer();
             ILensStorage lensStorage = new LensStorage(deserializer);

@@ -13,7 +13,7 @@ namespace AsphericalSurface.Entities
         {
         }
 
-        //TODO: Реализовать десеарелизацию из файла с параметрами в объект линзы (взять путь у Environment) 
+
         //TODO: Проработать исключения для десериализатора
         public List<Lens> DeserializeLensFromTXT()
         {

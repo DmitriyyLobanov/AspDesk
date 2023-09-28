@@ -191,6 +191,7 @@
             coef_A12_TextBox.Size = new Size(134, 23);
             coef_A12_TextBox.TabIndex = 44;
             coef_A12_TextBox.Text = "0";
+            coef_A12_TextBox.KeyPress += coef_A12_TextBox_KeyPress;
             // 
             // coef_A10_TextBox
             // 
@@ -199,6 +200,7 @@
             coef_A10_TextBox.Size = new Size(134, 23);
             coef_A10_TextBox.TabIndex = 43;
             coef_A10_TextBox.Text = "0";
+            coef_A10_TextBox.KeyPress += coef_A10_TextBox_KeyPress;
             // 
             // conicConstLabel
             // 
@@ -243,6 +245,7 @@
             coef_A8_TextBox.Size = new Size(134, 23);
             coef_A8_TextBox.TabIndex = 38;
             coef_A8_TextBox.Text = "0";
+            coef_A8_TextBox.KeyPress += coef_A8_TextBox_KeyPress;
             // 
             // coef_A6_TextBox
             // 
@@ -251,6 +254,7 @@
             coef_A6_TextBox.Size = new Size(134, 23);
             coef_A6_TextBox.TabIndex = 37;
             coef_A6_TextBox.Text = "0";
+            coef_A6_TextBox.KeyPress += coef_A6_TextBox_KeyPress;
             // 
             // coef_A4_TextBox
             // 
@@ -259,6 +263,7 @@
             coef_A4_TextBox.Size = new Size(134, 23);
             coef_A4_TextBox.TabIndex = 36;
             coef_A4_TextBox.Text = "0";
+            coef_A4_TextBox.KeyPress += coef_A4_TextBox_KeyPress;
             // 
             // conicConstTextBox
             // 
@@ -267,6 +272,7 @@
             conicConstTextBox.Size = new Size(134, 23);
             conicConstTextBox.TabIndex = 35;
             conicConstTextBox.Text = "0";
+            conicConstTextBox.KeyPress += conicConstTextBox_KeyPress;
             // 
             // lensRadiusTextBox
             // 
@@ -274,6 +280,7 @@
             lensRadiusTextBox.Name = "lensRadiusTextBox";
             lensRadiusTextBox.Size = new Size(134, 23);
             lensRadiusTextBox.TabIndex = 34;
+            lensRadiusTextBox.KeyPress += lensRadiusTextBox_KeyPress;
             // 
             // lensThinknessTextBox
             // 
@@ -281,6 +288,7 @@
             lensThinknessTextBox.Name = "lensThinknessTextBox";
             lensThinknessTextBox.Size = new Size(134, 23);
             lensThinknessTextBox.TabIndex = 33;
+            lensThinknessTextBox.KeyPress += lensThinknessTextBox_KeyPress;
             // 
             // LensWidthTextBox
             // 
@@ -288,6 +296,7 @@
             LensWidthTextBox.Name = "LensWidthTextBox";
             LensWidthTextBox.Size = new Size(134, 23);
             LensWidthTextBox.TabIndex = 32;
+            LensWidthTextBox.KeyPress += LensWidthTextBox_KeyPress;
             // 
             // lensNameLabel
             // 
