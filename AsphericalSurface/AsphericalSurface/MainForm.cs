@@ -100,14 +100,30 @@ namespace AsphericalSurface
             Lens selectedLens = lens.ElementAt(existLensesListBox.SelectedIndex);
 
             IController controller = new Controller();
-            if (controller.deleteLens(selectedLens))
+
+            DialogResult userChoise = MessageBox.Show(
+                $"Вы действиетльно хотите удалить линзу: {selectedLens.LensName}",
+                "Удаление линзы",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2,
+                MessageBoxOptions.DefaultDesktopOnly
+            );
+            if ( userChoise == DialogResult.Yes ) 
             {
-                MessageBox.Show("Линза удалена");
-                updateList();
+                if (controller.deleteLens(selectedLens))
+                {
+                    MessageBox.Show("Линза удалена");
+                    updateList();
+                }
+                else
+                {
+                    MessageBox.Show("Линза не удалена");
+                }
             }
             else
             {
-                MessageBox.Show("Линза не удалена");
+                return;
             }
 
         }
@@ -219,8 +235,9 @@ namespace AsphericalSurface
                     byte[] bytes = Encoding.UTF8.GetBytes(text);
 
                     myStream.Write(bytes, 0, bytes.Length);
-
+                    MessageBox.Show("Файл создаётся");
                     myStream.Close();
+                    MessageBox.Show("Файл создан!!!");
                 }
             }
         }
