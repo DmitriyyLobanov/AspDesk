@@ -19,10 +19,14 @@ namespace AsphericalSurface
         private CreateNewLensForm createNewLensForm;
         private EditLensForm editLensForm;
 
+        private double secondForTimer = 1;
+        private double fileReportLabelVisibleDelay = 3;
+
         public MainForm()
         {
             InitializeComponent();
             updateList();
+            fileReportLabel.Visible = false;
         }
 
 
@@ -109,7 +113,7 @@ namespace AsphericalSurface
                 MessageBoxDefaultButton.Button2,
                 MessageBoxOptions.DefaultDesktopOnly
             );
-            if ( userChoise == DialogResult.Yes ) 
+            if (userChoise == DialogResult.Yes)
             {
                 if (controller.deleteLens(selectedLens))
                 {
@@ -235,13 +239,27 @@ namespace AsphericalSurface
                     byte[] bytes = Encoding.UTF8.GetBytes(text);
 
                     myStream.Write(bytes, 0, bytes.Length);
-                    MessageBox.Show("Файл создаётся");
+                    fileReportLabel.Visible = true;
+                    fileReportLabel.Text = "Файл создаётся.";
                     myStream.Close();
-                    MessageBox.Show("Файл создан!!!");
+
+                    timer.Enabled = true;
+                    fileReportLabel.Text = "Файл создан!";
+                    
+
                 }
             }
         }
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            secondForTimer++;
+            if (secondForTimer == fileReportLabelVisibleDelay)
+            {
+                fileReportLabel.Visible = false;
+                timer.Stop();
+            }
+        }
 
     }
 

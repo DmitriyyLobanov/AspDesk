@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             existLensesListBox = new ListBox();
             singleLensInfoTextBox = new TextBox();
             existLensesLabel = new Label();
@@ -42,6 +43,8 @@
             lensScaleLabel = new Label();
             createDotsFileButton = new Button();
             saveFileDialog = new SaveFileDialog();
+            timer = new System.Windows.Forms.Timer(components);
+            fileReportLabel = new Label();
             SuspendLayout();
             // 
             // existLensesListBox
@@ -177,11 +180,28 @@
             // 
             saveFileDialog.Filter = "(*.txt)|.txt";
             // 
+            // timer
+            // 
+            timer.Interval = 1000;
+            timer.Tick += timer_Tick;
+            // 
+            // fileReportLabel
+            // 
+            fileReportLabel.AutoSize = true;
+            fileReportLabel.Font = new Font("Segoe UI", 16F, FontStyle.Italic, GraphicsUnit.Point);
+            fileReportLabel.ForeColor = SystemColors.MenuHighlight;
+            fileReportLabel.Location = new Point(286, 497);
+            fileReportLabel.Name = "fileReportLabel";
+            fileReportLabel.Size = new Size(72, 30);
+            fileReportLabel.TabIndex = 13;
+            fileReportLabel.Text = "label1";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(702, 545);
+            Controls.Add(fileReportLabel);
             Controls.Add(createDotsFileButton);
             Controls.Add(lensScaleLabel);
             Controls.Add(lensScaleTextBox);
@@ -220,5 +240,7 @@
         private Label lensScaleLabel;
         private Button createDotsFileButton;
         private SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.Timer timer;
+        private Label fileReportLabel;
     }
 }
