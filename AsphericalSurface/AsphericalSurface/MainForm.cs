@@ -244,6 +244,7 @@ namespace AsphericalSurface
                     myStream.Close();
 
                     timer.Enabled = true;
+                    secondForTimer = 1;
                     fileReportLabel.Text = "Файл создан!";
                     
 
@@ -257,7 +258,6 @@ namespace AsphericalSurface
             if (secondForTimer == fileReportLabelVisibleDelay)
             {
                 fileReportLabel.Visible = false;
-                timer.Stop();
             }
         }
 
