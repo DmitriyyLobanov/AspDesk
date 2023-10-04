@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             existLensesListBox = new ListBox();
             singleLensInfoTextBox = new TextBox();
             existLensesLabel = new Label();
@@ -45,6 +46,9 @@
             saveFileDialog = new SaveFileDialog();
             timer = new System.Windows.Forms.Timer(components);
             fileReportLabel = new Label();
+            AboutAppLabel = new Label();
+            AboutAppPictureBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)AboutAppPictureBox).BeginInit();
             SuspendLayout();
             // 
             // existLensesListBox
@@ -192,15 +196,41 @@
             fileReportLabel.ForeColor = SystemColors.MenuHighlight;
             fileReportLabel.Location = new Point(286, 497);
             fileReportLabel.Name = "fileReportLabel";
-            fileReportLabel.Size = new Size(72, 30);
+            fileReportLabel.Size = new Size(105, 30);
             fileReportLabel.TabIndex = 13;
-            fileReportLabel.Text = "label1";
+            fileReportLabel.Text = "fileReport";
+            // 
+            // AboutAppLabel
+            // 
+            AboutAppLabel.AutoSize = true;
+            AboutAppLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            AboutAppLabel.ForeColor = SystemColors.ActiveCaptionText;
+            AboutAppLabel.Location = new Point(568, 515);
+            AboutAppLabel.Name = "AboutAppLabel";
+            AboutAppLabel.Size = new Size(106, 21);
+            AboutAppLabel.TabIndex = 14;
+            AboutAppLabel.Text = "О программе";
+            AboutAppLabel.Click += AboutAppLabel_Click;
+            AboutAppLabel.MouseLeave += AboutAppLabel_MouseLeave;
+            AboutAppLabel.MouseHover += AboutAppLabel_MouseHover;
+            // 
+            // AboutAppPictureBox
+            // 
+            AboutAppPictureBox.Image = (Image)resources.GetObject("AboutAppPictureBox.Image");
+            AboutAppPictureBox.ImageLocation = "";
+            AboutAppPictureBox.Location = new Point(671, 515);
+            AboutAppPictureBox.Name = "AboutAppPictureBox";
+            AboutAppPictureBox.Size = new Size(25, 23);
+            AboutAppPictureBox.TabIndex = 15;
+            AboutAppPictureBox.TabStop = false;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(702, 545);
+            Controls.Add(AboutAppPictureBox);
+            Controls.Add(AboutAppLabel);
             Controls.Add(fileReportLabel);
             Controls.Add(createDotsFileButton);
             Controls.Add(lensScaleLabel);
@@ -220,6 +250,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AsphericalSurface";
             FormClosing += MainForm_FormClosing;
+            ((System.ComponentModel.ISupportInitialize)AboutAppPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -242,5 +273,7 @@
         private SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Timer timer;
         private Label fileReportLabel;
+        private Label AboutAppLabel;
+        private PictureBox AboutAppPictureBox;
     }
 }

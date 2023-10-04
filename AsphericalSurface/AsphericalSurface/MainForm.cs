@@ -26,7 +26,9 @@ namespace AsphericalSurface
         {
             InitializeComponent();
             updateList();
+
             fileReportLabel.Visible = false;
+            AboutAppLabel.ForeColor = Color.FromArgb(188, 195, 186);
         }
 
 
@@ -245,8 +247,9 @@ namespace AsphericalSurface
 
                     timer.Enabled = true;
                     secondForTimer = 1;
+                    fileReportLabel.ForeColor = Color.FromArgb(43, 199, 11);
                     fileReportLabel.Text = "Файл создан!";
-                    
+
 
                 }
             }
@@ -261,6 +264,20 @@ namespace AsphericalSurface
             }
         }
 
+        private void AboutAppLabel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("AAAAAAAAAAAAAA");
+        }
+
+        private void AboutAppLabel_MouseHover(object sender, EventArgs e)
+        {
+            AboutAppLabel.ForeColor = Color.FromArgb(108, 205, 88);
+        }
+
+        private void AboutAppLabel_MouseLeave(object sender, EventArgs e)
+        {
+            AboutAppLabel.ForeColor = Color.FromArgb(188, 195, 186);
+        }
     }
 
 }
