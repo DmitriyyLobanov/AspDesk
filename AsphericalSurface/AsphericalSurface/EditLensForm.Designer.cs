@@ -327,7 +327,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(430, 525);
+            ClientSize = new Size(430, 453);
             Controls.Add(backToMainFormButton);
             Controls.Add(saveButton);
             Controls.Add(requiredFieldsLabel);

@@ -327,7 +327,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(475, 500);
+            ClientSize = new Size(475, 467);
             Controls.Add(backToMainFormButton);
             Controls.Add(createNewLensButton);
             Controls.Add(requiredFieldsLabel);

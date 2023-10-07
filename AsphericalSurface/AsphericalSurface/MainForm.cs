@@ -18,6 +18,7 @@ namespace AsphericalSurface
     {
         private CreateNewLensForm createNewLensForm;
         private EditLensForm editLensForm;
+        private AboutAppForm aboutAppForm;
 
         private double secondForTimer = 1;
         private double fileReportLabelVisibleDelay = 3;
@@ -266,7 +267,9 @@ namespace AsphericalSurface
 
         private void AboutAppLabel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("AAAAAAAAAAAAAA");
+            aboutAppForm = new AboutAppForm();
+            aboutAppForm.Visible = true;
+
         }
 
         private void AboutAppLabel_MouseHover(object sender, EventArgs e)

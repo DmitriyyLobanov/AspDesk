@@ -48,6 +48,8 @@
             fileReportLabel = new Label();
             AboutAppLabel = new Label();
             AboutAppPictureBox = new PictureBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)AboutAppPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -55,14 +57,14 @@
             // 
             existLensesListBox.FormattingEnabled = true;
             existLensesListBox.ItemHeight = 15;
-            existLensesListBox.Location = new Point(119, 89);
+            existLensesListBox.Location = new Point(23, 41);
             existLensesListBox.Name = "existLensesListBox";
             existLensesListBox.Size = new Size(181, 214);
             existLensesListBox.TabIndex = 0;
             // 
             // singleLensInfoTextBox
             // 
-            singleLensInfoTextBox.Location = new Point(407, 90);
+            singleLensInfoTextBox.Location = new Point(311, 42);
             singleLensInfoTextBox.Multiline = true;
             singleLensInfoTextBox.Name = "singleLensInfoTextBox";
             singleLensInfoTextBox.Size = new Size(181, 213);
@@ -71,7 +73,7 @@
             // existLensesLabel
             // 
             existLensesLabel.AutoSize = true;
-            existLensesLabel.Location = new Point(138, 62);
+            existLensesLabel.Location = new Point(42, 14);
             existLensesLabel.Name = "existLensesLabel";
             existLensesLabel.Size = new Size(139, 15);
             existLensesLabel.TabIndex = 2;
@@ -80,7 +82,7 @@
             // singleLensInfoLabel
             // 
             singleLensInfoLabel.AutoSize = true;
-            singleLensInfoLabel.Location = new Point(407, 62);
+            singleLensInfoLabel.Location = new Point(311, 14);
             singleLensInfoLabel.Name = "singleLensInfoLabel";
             singleLensInfoLabel.Size = new Size(126, 15);
             singleLensInfoLabel.TabIndex = 3;
@@ -88,7 +90,7 @@
             // 
             // updateListButton
             // 
-            updateListButton.Location = new Point(119, 309);
+            updateListButton.Location = new Point(23, 261);
             updateListButton.Name = "updateListButton";
             updateListButton.Size = new Size(181, 23);
             updateListButton.TabIndex = 4;
@@ -98,7 +100,7 @@
             // 
             // showInfoButton
             // 
-            showInfoButton.Location = new Point(306, 89);
+            showInfoButton.Location = new Point(210, 41);
             showInfoButton.Name = "showInfoButton";
             showInfoButton.Size = new Size(95, 65);
             showInfoButton.TabIndex = 5;
@@ -108,7 +110,7 @@
             // 
             // deleteLensButton
             // 
-            deleteLensButton.Location = new Point(306, 160);
+            deleteLensButton.Location = new Point(210, 112);
             deleteLensButton.Name = "deleteLensButton";
             deleteLensButton.Size = new Size(95, 65);
             deleteLensButton.TabIndex = 6;
@@ -118,7 +120,7 @@
             // 
             // createNewLensButton
             // 
-            createNewLensButton.Location = new Point(119, 338);
+            createNewLensButton.Location = new Point(23, 290);
             createNewLensButton.Name = "createNewLensButton";
             createNewLensButton.Size = new Size(181, 23);
             createNewLensButton.TabIndex = 7;
@@ -129,7 +131,7 @@
             // editLensButton
             // 
             editLensButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            editLensButton.Location = new Point(306, 231);
+            editLensButton.Location = new Point(210, 183);
             editLensButton.Name = "editLensButton";
             editLensButton.Size = new Size(95, 65);
             editLensButton.TabIndex = 8;
@@ -139,18 +141,19 @@
             // 
             // scaleLensButton
             // 
-            scaleLensButton.Location = new Point(119, 437);
+            scaleLensButton.Location = new Point(23, 389);
             scaleLensButton.Name = "scaleLensButton";
             scaleLensButton.Size = new Size(216, 46);
             scaleLensButton.TabIndex = 9;
             scaleLensButton.Text = "Отмасштабировать линзу";
+            toolTip1.SetToolTip(scaleLensButton, "Выделите линзу в списке, введите коэффициент масштабирования в диапазоне 1-99) и нажмите эту кнопку.\r\nВ списке линз станет доступна новая линза.");
             scaleLensButton.UseVisualStyleBackColor = true;
             scaleLensButton.Click += scaleLensButton_Click;
             // 
             // lensScaleTextBox
             // 
             lensScaleTextBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lensScaleTextBox.Location = new Point(235, 403);
+            lensScaleTextBox.Location = new Point(139, 355);
             lensScaleTextBox.MaxLength = 5;
             lensScaleTextBox.Name = "lensScaleTextBox";
             lensScaleTextBox.Size = new Size(100, 29);
@@ -162,7 +165,7 @@
             // lensScaleLabel
             // 
             lensScaleLabel.AutoSize = true;
-            lensScaleLabel.Location = new Point(119, 402);
+            lensScaleLabel.Location = new Point(23, 354);
             lensScaleLabel.MaximumSize = new Size(110, 0);
             lensScaleLabel.Name = "lensScaleLabel";
             lensScaleLabel.Size = new Size(110, 30);
@@ -172,11 +175,12 @@
             // 
             // createDotsFileButton
             // 
-            createDotsFileButton.Location = new Point(362, 437);
+            createDotsFileButton.Location = new Point(266, 389);
             createDotsFileButton.Name = "createDotsFileButton";
             createDotsFileButton.Size = new Size(226, 46);
             createDotsFileButton.TabIndex = 12;
             createDotsFileButton.Text = "Создать файл с массивом точек";
+            toolTip1.SetToolTip(createDotsFileButton, "Выделите линзу в списке доступных линз и нажмите эту кнопку.\r\nОткроется диалоговое окно сохранения файла с массивом точек поверхности линзы.\r\n");
             createDotsFileButton.UseVisualStyleBackColor = true;
             createDotsFileButton.Click += createDotsFileButton_Click;
             // 
@@ -194,7 +198,7 @@
             fileReportLabel.AutoSize = true;
             fileReportLabel.Font = new Font("Segoe UI", 16F, FontStyle.Italic, GraphicsUnit.Point);
             fileReportLabel.ForeColor = SystemColors.MenuHighlight;
-            fileReportLabel.Location = new Point(286, 497);
+            fileReportLabel.Location = new Point(190, 449);
             fileReportLabel.Name = "fileReportLabel";
             fileReportLabel.Size = new Size(105, 30);
             fileReportLabel.TabIndex = 13;
@@ -205,7 +209,7 @@
             AboutAppLabel.AutoSize = true;
             AboutAppLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             AboutAppLabel.ForeColor = SystemColors.ActiveCaptionText;
-            AboutAppLabel.Location = new Point(568, 515);
+            AboutAppLabel.Location = new Point(384, 475);
             AboutAppLabel.Name = "AboutAppLabel";
             AboutAppLabel.Size = new Size(106, 21);
             AboutAppLabel.TabIndex = 14;
@@ -218,7 +222,7 @@
             // 
             AboutAppPictureBox.Image = (Image)resources.GetObject("AboutAppPictureBox.Image");
             AboutAppPictureBox.ImageLocation = "";
-            AboutAppPictureBox.Location = new Point(671, 515);
+            AboutAppPictureBox.Location = new Point(487, 475);
             AboutAppPictureBox.Name = "AboutAppPictureBox";
             AboutAppPictureBox.Size = new Size(25, 23);
             AboutAppPictureBox.TabIndex = 15;
@@ -228,7 +232,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(702, 545);
+            ClientSize = new Size(529, 501);
             Controls.Add(AboutAppPictureBox);
             Controls.Add(AboutAppLabel);
             Controls.Add(fileReportLabel);
@@ -275,5 +279,7 @@
         private Label fileReportLabel;
         private Label AboutAppLabel;
         private PictureBox AboutAppPictureBox;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private ToolTip toolTip1;
     }
 }
