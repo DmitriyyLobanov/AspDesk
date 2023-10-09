@@ -118,10 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>390, 17</value>
+    <value>236, 17</value>
   </metadata>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>390, 17</value>
+    <value>236, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>236, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>236, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>236, 17</value>
   </metadata>
   <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -133,7 +142,7 @@
   <data name="AboutAppPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAVpJREFUSEvllM0uBEEURluMFfMQeALB0t8LSIiEIIIwZjLxDsTC0gJbsbL0u2Tl
+        DAAACwwBP0AiyAAAAVpJREFUSEvllM0uBEEURluMFfMQeALB0t8LSIiEIIIwZjLxDsTC0gJbsbL0u2Tl
         yXxnbnViVN3parPjJCf5prqqp/v2rSr+DeNyQW7KrZAn5NDMyUf5IS9kJ0hmjGvMqU1DXssHOc2AA9eY
         cyPHGMiBiS/ysPcrD+a+yqw/4cnr3LzkQLJ2INSTV05B7T+DXQYSsHbeYho+WqrmS/Jejgbv5Ir8yZR8
         shhD271bjDiVsxZ7LMszixHco2mxH3qb9svhUq5ZjDiXPEAEG+jEosuMpP+v5AgDCY7ltsV+2KVtiy57
@@ -142,7 +151,4 @@
         lsY01AfrEMMAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>228, 17</value>
-  </metadata>
 </root>

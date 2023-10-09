@@ -48,7 +48,6 @@
             fileReportLabel = new Label();
             AboutAppLabel = new Label();
             AboutAppPictureBox = new PictureBox();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)AboutAppPictureBox).BeginInit();
             SuspendLayout();
@@ -105,6 +104,7 @@
             showInfoButton.Size = new Size(95, 65);
             showInfoButton.TabIndex = 5;
             showInfoButton.Text = "Показать инфо";
+            toolTip1.SetToolTip(showInfoButton, "Показать подробную информацию о выбранной линзе.");
             showInfoButton.UseVisualStyleBackColor = true;
             showInfoButton.Click += showInfoButton_Click;
             // 
@@ -115,6 +115,7 @@
             deleteLensButton.Size = new Size(95, 65);
             deleteLensButton.TabIndex = 6;
             deleteLensButton.Text = "Удалить линзу";
+            toolTip1.SetToolTip(deleteLensButton, "Удалить выбранную линзу.\r\nВнимание: линза будет удалена без возможности восстановления.\r\n");
             deleteLensButton.UseVisualStyleBackColor = true;
             deleteLensButton.Click += deleteLensButton_Click;
             // 
@@ -125,6 +126,7 @@
             createNewLensButton.Size = new Size(181, 23);
             createNewLensButton.TabIndex = 7;
             createNewLensButton.Text = "Создать новую линзу";
+            toolTip1.SetToolTip(createNewLensButton, "Открыть форму создания новой линзы\r\n");
             createNewLensButton.UseVisualStyleBackColor = true;
             createNewLensButton.Click += createNewLensButton_Click;
             // 
@@ -136,6 +138,7 @@
             editLensButton.Size = new Size(95, 65);
             editLensButton.TabIndex = 8;
             editLensButton.Text = "Редактировать линзу";
+            toolTip1.SetToolTip(editLensButton, "редактировать выбранную линзу");
             editLensButton.UseVisualStyleBackColor = true;
             editLensButton.Click += editLensButton_Click;
             // 
@@ -160,6 +163,7 @@
             lensScaleTextBox.TabIndex = 10;
             lensScaleTextBox.Text = "1";
             lensScaleTextBox.TextAlign = HorizontalAlignment.Center;
+            toolTip1.SetToolTip(lensScaleTextBox, "в диапазоне 1 - 99");
             lensScaleTextBox.KeyPress += lensScaleTextBox_KeyPress;
             // 
             // lensScaleLabel
@@ -279,7 +283,6 @@
         private Label fileReportLabel;
         private Label AboutAppLabel;
         private PictureBox AboutAppPictureBox;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ToolTip toolTip1;
     }
 }

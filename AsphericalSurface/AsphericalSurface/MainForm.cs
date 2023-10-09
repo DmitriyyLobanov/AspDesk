@@ -203,6 +203,7 @@ namespace AsphericalSurface
             {
                 MessageBox.Show("Линза отмасштабирована и создана.");
                 updateList();
+                lensScaleTextBox.Text = "1";
             }
             else
             {

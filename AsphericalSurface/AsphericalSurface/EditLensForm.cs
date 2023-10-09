@@ -90,19 +90,19 @@ namespace AsphericalSurface
 
                 if (controller.deleteLens(editableLens))
                 {
-                    MessageBox.Show("Переданная линза удалена!");
+                    //MessageBox.Show("Переданная линза удалена!");
                     if (controller.createNewLens(changedLens))
                     {
-                        MessageBox.Show("Новая линза на место удалённой создана!");
+                        //MessageBox.Show("Новая линза на место удалённой создана!");
                     }
                     else
                     {
-                        MessageBox.Show("Новая линза на место удалённой НЕ создана!");
+                        //MessageBox.Show("Новая линза на место удалённой НЕ создана!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Переданная линза НЕ удалена!");
+                    //MessageBox.Show("Переданная линза НЕ удалена!");
                 }
 
                 returnToMainForm();
