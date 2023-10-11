@@ -45,7 +45,6 @@
             coef_A12_TextBox = new TextBox();
             coef_A10_TextBox = new TextBox();
             conicConstLabel = new Label();
-            lensRadiusLabel = new Label();
             lensThinknessLabel = new Label();
             lensWidthLabel = new Label();
             coef_A8_TextBox = new TextBox();
@@ -58,6 +57,8 @@
             lensNameLabel = new Label();
             editLensLabel = new Label();
             lensNameTextBox = new TextBox();
+            RadiusRadioButton = new RadioButton();
+            CVradioButton = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)descriptionTextPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)lensRadiusPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)lensThinknessPictureBox).BeginInit();
@@ -67,7 +68,7 @@
             // 
             // backToMainFormButton
             // 
-            backToMainFormButton.Location = new Point(173, 412);
+            backToMainFormButton.Location = new Point(173, 463);
             backToMainFormButton.Name = "backToMainFormButton";
             backToMainFormButton.Size = new Size(120, 23);
             backToMainFormButton.TabIndex = 57;
@@ -77,7 +78,7 @@
             // 
             // saveButton
             // 
-            saveButton.Location = new Point(173, 383);
+            saveButton.Location = new Point(173, 434);
             saveButton.Name = "saveButton";
             saveButton.Size = new Size(120, 23);
             saveButton.TabIndex = 56;
@@ -88,7 +89,7 @@
             // requiredFieldsLabel
             // 
             requiredFieldsLabel.AutoSize = true;
-            requiredFieldsLabel.Location = new Point(173, 346);
+            requiredFieldsLabel.Location = new Point(173, 397);
             requiredFieldsLabel.Name = "requiredFieldsLabel";
             requiredFieldsLabel.Size = new Size(125, 15);
             requiredFieldsLabel.TabIndex = 55;
@@ -97,7 +98,7 @@
             // descriptionTextPictureBox
             // 
             descriptionTextPictureBox.Image = (Image)resources.GetObject("descriptionTextPictureBox.Image");
-            descriptionTextPictureBox.Location = new Point(143, 340);
+            descriptionTextPictureBox.Location = new Point(143, 391);
             descriptionTextPictureBox.Name = "descriptionTextPictureBox";
             descriptionTextPictureBox.Size = new Size(25, 21);
             descriptionTextPictureBox.TabIndex = 54;
@@ -106,7 +107,7 @@
             // lensRadiusPictureBox
             // 
             lensRadiusPictureBox.Image = (Image)resources.GetObject("lensRadiusPictureBox.Image");
-            lensRadiusPictureBox.Location = new Point(304, 132);
+            lensRadiusPictureBox.Location = new Point(304, 153);
             lensRadiusPictureBox.Name = "lensRadiusPictureBox";
             lensRadiusPictureBox.Size = new Size(25, 21);
             lensRadiusPictureBox.TabIndex = 53;
@@ -142,7 +143,7 @@
             // coef_A12_Label
             // 
             coef_A12_Label.AutoSize = true;
-            coef_A12_Label.Location = new Point(131, 306);
+            coef_A12_Label.Location = new Point(131, 357);
             coef_A12_Label.Name = "coef_A12_Label";
             coef_A12_Label.Size = new Size(27, 15);
             coef_A12_Label.TabIndex = 49;
@@ -151,7 +152,7 @@
             // coef_A10_Label
             // 
             coef_A10_Label.AutoSize = true;
-            coef_A10_Label.Location = new Point(131, 277);
+            coef_A10_Label.Location = new Point(131, 328);
             coef_A10_Label.Name = "coef_A10_Label";
             coef_A10_Label.Size = new Size(27, 15);
             coef_A10_Label.TabIndex = 48;
@@ -160,7 +161,7 @@
             // coef_A8_Label
             // 
             coef_A8_Label.AutoSize = true;
-            coef_A8_Label.Location = new Point(138, 249);
+            coef_A8_Label.Location = new Point(138, 300);
             coef_A8_Label.Name = "coef_A8_Label";
             coef_A8_Label.Size = new Size(21, 15);
             coef_A8_Label.TabIndex = 47;
@@ -169,7 +170,7 @@
             // coef_A6_Label
             // 
             coef_A6_Label.AutoSize = true;
-            coef_A6_Label.Location = new Point(137, 219);
+            coef_A6_Label.Location = new Point(137, 270);
             coef_A6_Label.Name = "coef_A6_Label";
             coef_A6_Label.Size = new Size(21, 15);
             coef_A6_Label.TabIndex = 46;
@@ -178,7 +179,7 @@
             // coef_A4_Label
             // 
             coef_A4_Label.AutoSize = true;
-            coef_A4_Label.Location = new Point(137, 190);
+            coef_A4_Label.Location = new Point(137, 241);
             coef_A4_Label.Name = "coef_A4_Label";
             coef_A4_Label.Size = new Size(21, 15);
             coef_A4_Label.TabIndex = 45;
@@ -186,7 +187,7 @@
             // 
             // coef_A12_TextBox
             // 
-            coef_A12_TextBox.Location = new Point(164, 303);
+            coef_A12_TextBox.Location = new Point(164, 354);
             coef_A12_TextBox.Name = "coef_A12_TextBox";
             coef_A12_TextBox.Size = new Size(134, 23);
             coef_A12_TextBox.TabIndex = 44;
@@ -195,7 +196,7 @@
             // 
             // coef_A10_TextBox
             // 
-            coef_A10_TextBox.Location = new Point(164, 274);
+            coef_A10_TextBox.Location = new Point(164, 325);
             coef_A10_TextBox.Name = "coef_A10_TextBox";
             coef_A10_TextBox.Size = new Size(134, 23);
             coef_A10_TextBox.TabIndex = 43;
@@ -205,20 +206,11 @@
             // conicConstLabel
             // 
             conicConstLabel.AutoSize = true;
-            conicConstLabel.Location = new Point(19, 161);
+            conicConstLabel.Location = new Point(19, 212);
             conicConstLabel.Name = "conicConstLabel";
             conicConstLabel.Size = new Size(139, 15);
             conicConstLabel.TabIndex = 42;
             conicConstLabel.Text = "Коническая постоянная";
-            // 
-            // lensRadiusLabel
-            // 
-            lensRadiusLabel.AutoSize = true;
-            lensRadiusLabel.Location = new Point(113, 132);
-            lensRadiusLabel.Name = "lensRadiusLabel";
-            lensRadiusLabel.Size = new Size(45, 15);
-            lensRadiusLabel.TabIndex = 41;
-            lensRadiusLabel.Text = "Радиус";
             // 
             // lensThinknessLabel
             // 
@@ -240,7 +232,7 @@
             // 
             // coef_A8_TextBox
             // 
-            coef_A8_TextBox.Location = new Point(164, 245);
+            coef_A8_TextBox.Location = new Point(164, 296);
             coef_A8_TextBox.Name = "coef_A8_TextBox";
             coef_A8_TextBox.Size = new Size(134, 23);
             coef_A8_TextBox.TabIndex = 38;
@@ -249,7 +241,7 @@
             // 
             // coef_A6_TextBox
             // 
-            coef_A6_TextBox.Location = new Point(164, 216);
+            coef_A6_TextBox.Location = new Point(164, 267);
             coef_A6_TextBox.Name = "coef_A6_TextBox";
             coef_A6_TextBox.Size = new Size(134, 23);
             coef_A6_TextBox.TabIndex = 37;
@@ -258,7 +250,7 @@
             // 
             // coef_A4_TextBox
             // 
-            coef_A4_TextBox.Location = new Point(164, 187);
+            coef_A4_TextBox.Location = new Point(164, 238);
             coef_A4_TextBox.Name = "coef_A4_TextBox";
             coef_A4_TextBox.Size = new Size(134, 23);
             coef_A4_TextBox.TabIndex = 36;
@@ -267,7 +259,7 @@
             // 
             // conicConstTextBox
             // 
-            conicConstTextBox.Location = new Point(164, 158);
+            conicConstTextBox.Location = new Point(164, 209);
             conicConstTextBox.Name = "conicConstTextBox";
             conicConstTextBox.Size = new Size(134, 23);
             conicConstTextBox.TabIndex = 35;
@@ -276,7 +268,7 @@
             // 
             // lensRadiusTextBox
             // 
-            lensRadiusTextBox.Location = new Point(164, 129);
+            lensRadiusTextBox.Location = new Point(164, 150);
             lensRadiusTextBox.Name = "lensRadiusTextBox";
             lensRadiusTextBox.Size = new Size(134, 23);
             lensRadiusTextBox.TabIndex = 34;
@@ -323,11 +315,35 @@
             lensNameTextBox.Size = new Size(134, 23);
             lensNameTextBox.TabIndex = 29;
             // 
+            // RadiusRadioButton
+            // 
+            RadiusRadioButton.AutoSize = true;
+            RadiusRadioButton.Location = new Point(95, 141);
+            RadiusRadioButton.Name = "RadiusRadioButton";
+            RadiusRadioButton.Size = new Size(63, 19);
+            RadiusRadioButton.TabIndex = 58;
+            RadiusRadioButton.TabStop = true;
+            RadiusRadioButton.Text = "Радиус";
+            RadiusRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // CVradioButton
+            // 
+            CVradioButton.AutoSize = true;
+            CVradioButton.Location = new Point(95, 166);
+            CVradioButton.Name = "CVradioButton";
+            CVradioButton.Size = new Size(40, 19);
+            CVradioButton.TabIndex = 59;
+            CVradioButton.TabStop = true;
+            CVradioButton.Text = "CV";
+            CVradioButton.UseVisualStyleBackColor = true;
+            // 
             // EditLensForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(430, 453);
+            ClientSize = new Size(430, 536);
+            Controls.Add(CVradioButton);
+            Controls.Add(RadiusRadioButton);
             Controls.Add(backToMainFormButton);
             Controls.Add(saveButton);
             Controls.Add(requiredFieldsLabel);
@@ -344,7 +360,6 @@
             Controls.Add(coef_A12_TextBox);
             Controls.Add(coef_A10_TextBox);
             Controls.Add(conicConstLabel);
-            Controls.Add(lensRadiusLabel);
             Controls.Add(lensThinknessLabel);
             Controls.Add(lensWidthLabel);
             Controls.Add(coef_A8_TextBox);
@@ -389,7 +404,6 @@
         private TextBox coef_A12_TextBox;
         private TextBox coef_A10_TextBox;
         private Label conicConstLabel;
-        private Label lensRadiusLabel;
         private Label lensThinknessLabel;
         private Label lensWidthLabel;
         private TextBox coef_A8_TextBox;
@@ -402,5 +416,7 @@
         private Label lensNameLabel;
         private Label editLensLabel;
         private TextBox lensNameTextBox;
+        private RadioButton RadiusRadioButton;
+        private RadioButton CVradioButton;
     }
 }

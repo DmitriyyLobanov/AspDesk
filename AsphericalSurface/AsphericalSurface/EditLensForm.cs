@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace AsphericalSurface
 {
@@ -75,10 +76,19 @@ namespace AsphericalSurface
             else
             {
                 MessageBox.Show("Изменения внесены!");
+                double changedLensRadius;
+                if (CVradioButton.Checked == true)
+                {
+                    changedLensRadius = 1 / Double.Parse(lensRadiusTextBox.Text);
+                }
+                else
+                {
+                    changedLensRadius = Double.Parse(lensRadiusTextBox.Text);
+                }
                 Lens changedLens = new Lens(lensNameTextBox.Text.TrimStart(),
                                                 Double.Parse(lensThinknessTextBox.Text),
                                                 Double.Parse(LensWidthTextBox.Text),
-                                                Double.Parse(lensRadiusTextBox.Text),
+                                                changedLensRadius,
                                                 Double.Parse(conicConstTextBox.Text),
                                                 Double.Parse(coef_A4_TextBox.Text),
                                                 Double.Parse(coef_A6_TextBox.Text),

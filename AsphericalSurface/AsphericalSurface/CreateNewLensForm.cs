@@ -47,10 +47,19 @@ namespace AsphericalSurface
             }
             else
             {
+                double newLensRadius;
+                if (CVradioButton.Checked == true)
+                {
+                    newLensRadius = 1 / Double.Parse(lensRadiusTextBox.Text);
+                }
+                else
+                {
+                    newLensRadius = Double.Parse(lensRadiusTextBox.Text);
+                }
                 Lens newCustomLens = new Lens(lensNameTextBox.Text,
                     Double.Parse(lensThinknessTextBox.Text),
                     Double.Parse(LensWidthTextBox.Text),
-                    Double.Parse(lensRadiusTextBox.Text),
+                    newLensRadius,
                     Double.Parse(conicConstTextBox.Text),
                     Double.Parse(coef_A4_TextBox.Text),
                     Double.Parse(coef_A6_TextBox.Text),
