@@ -373,6 +373,7 @@
             Controls.Add(editLensLabel);
             Controls.Add(lensNameTextBox);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EditLensForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Редактирование линзы";

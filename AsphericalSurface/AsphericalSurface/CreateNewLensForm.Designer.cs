@@ -373,6 +373,7 @@
             Controls.Add(createNewLensLabel);
             Controls.Add(lensNameTextBox);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CreateNewLensForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Создание новой линзы";

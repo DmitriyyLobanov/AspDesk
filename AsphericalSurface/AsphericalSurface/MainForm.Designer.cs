@@ -138,7 +138,7 @@
             editLensButton.Size = new Size(95, 65);
             editLensButton.TabIndex = 8;
             editLensButton.Text = "Редактировать линзу";
-            toolTip1.SetToolTip(editLensButton, "редактировать выбранную линзу");
+            toolTip1.SetToolTip(editLensButton, "Редактировать выбранную линзу");
             editLensButton.UseVisualStyleBackColor = true;
             editLensButton.Click += editLensButton_Click;
             // 
@@ -254,6 +254,7 @@
             Controls.Add(singleLensInfoTextBox);
             Controls.Add(existLensesListBox);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AsphericalSurface";

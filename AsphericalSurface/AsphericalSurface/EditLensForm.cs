@@ -191,7 +191,7 @@ namespace AsphericalSurface
         private void LensWidthTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая а ASCII
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 69) //цифры, клавиша BackSpace и запятая а ASCII, Е
             {
                 e.Handled = true;
             }
@@ -200,7 +200,7 @@ namespace AsphericalSurface
         private void lensThinknessTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая а ASCII
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44 && number != 69) //цифры, клавиша BackSpace и запятая а ASCII, Е
             {
                 e.Handled = true;
             }
