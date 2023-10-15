@@ -209,7 +209,8 @@ namespace AsphericalSurface
         private void lensRadiusTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44) //цифры, клавиша BackSpace и запятая а ASCII
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && number != 8 && number != 44
+                && number != 45 && number != 69 && number != 43) //цифры, клавиша BackSpace и запятая а ASCII минус плюс и Е
             {
                 e.Handled = true;
             }
