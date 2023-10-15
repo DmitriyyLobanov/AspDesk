@@ -106,6 +106,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AboutAppForm";
             Text = "О программе";
             Load += AboutAppForm_Load;
