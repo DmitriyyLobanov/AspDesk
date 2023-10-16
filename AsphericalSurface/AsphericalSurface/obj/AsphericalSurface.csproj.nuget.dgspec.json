@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dmitriy\\Desktop\\AspDesk\\AsphericalSurface\\AsphericalSurface\\AsphericalSurface.csproj": {}
+    "C:\\Users\\User\\Desktop\\asp\\AspDesk\\AsphericalSurface\\AsphericalSurface\\AsphericalSurface.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dmitriy\\Desktop\\AspDesk\\AsphericalSurface\\AsphericalSurface\\AsphericalSurface.csproj": {
+    "C:\\Users\\User\\Desktop\\asp\\AspDesk\\AsphericalSurface\\AsphericalSurface\\AsphericalSurface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dmitriy\\Desktop\\AspDesk\\AsphericalSurface\\AsphericalSurface\\AsphericalSurface.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\asp\\AspDesk\\AsphericalSurface\\AsphericalSurface\\AsphericalSurface.csproj",
         "projectName": "AsphericalSurface",
-        "projectPath": "C:\\Users\\Dmitriy\\Desktop\\AspDesk\\AsphericalSurface\\AsphericalSurface\\AsphericalSurface.csproj",
-        "packagesPath": "C:\\Users\\Dmitriy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dmitriy\\Desktop\\AspDesk\\AsphericalSurface\\AsphericalSurface\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\asp\\AspDesk\\AsphericalSurface\\AsphericalSurface\\AsphericalSurface.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\asp\\AspDesk\\AsphericalSurface\\AsphericalSurface\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dmitriy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -62,7 +62,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

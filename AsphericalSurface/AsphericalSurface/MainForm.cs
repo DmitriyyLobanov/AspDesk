@@ -81,7 +81,7 @@ namespace AsphericalSurface
             singleLensInfoTextBox.Text += "Тип поверхности: " + selectedLens.Surface + Environment.NewLine;
             singleLensInfoTextBox.Text += "Толщина линзы: " + selectedLens.LensThinckness + Environment.NewLine;
             singleLensInfoTextBox.Text += "Ширина линзы: " + selectedLens.LensWidth + Environment.NewLine;
-            singleLensInfoTextBox.Text += "Радиус линзы: " + selectedLens.Radius + Environment.NewLine;
+            singleLensInfoTextBox.Text += "Радиус линзы: " +Math.Round(selectedLens.Radius, 4) + Environment.NewLine;
             if (selectedLens.Surface == SURFACE_TYPES.ASPHERICAL)
             {
                 singleLensInfoTextBox.Text += "коническая постоянная: " + selectedLens.K + Environment.NewLine;
